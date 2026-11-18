@@ -2,17 +2,18 @@
 
 namespace JeffersonGoncalves\Filament\UsPrivacy;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UsPrivacyServiceProvider extends PackageServiceProvider
+class UsPrivacyServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-us-privacy';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-us-privacy')
-            ->hasConfigFile()
+            ->name(static::$name)
             ->hasViews()
-            ->hasMigrations();
+            ->hasTranslations();
     }
 }
